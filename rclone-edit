@@ -1,0 +1,5 @@
+#!/bin/bash
+EDITOR="${EDITOR:-nano}"
+VIPE=$(which vipe)
+VIPE=${VIPE:-"./vipe.sh"}
+rclone cat $1 | EDITOR=$EDITOR $VIPE | rclone rcat $1
